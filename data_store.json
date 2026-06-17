@@ -1,0 +1,1231 @@
+{
+  "accessCodes": [
+    {
+      "id": "1",
+      "code": "ARCHITECT-X92-2026",
+      "expiresAt": null,
+      "maxUses": null,
+      "uses": 8,
+      "createdAt": "2026-05-23T15:43:46.834Z"
+    },
+    {
+      "id": "2",
+      "code": "VANGUARD-TEST-2HR",
+      "expiresAt": "2026-05-23T17:43:46.834Z",
+      "maxUses": 10,
+      "uses": 1,
+      "createdAt": "2026-05-23T15:43:46.834Z"
+    },
+    {
+      "id": "3",
+      "code": "PROPRIETARY-UNLIMITED",
+      "expiresAt": null,
+      "maxUses": null,
+      "uses": 0,
+      "createdAt": "2026-05-23T15:43:46.834Z"
+    }
+  ],
+  "webTeamAccounts": [
+    {
+      "username": "Admin",
+      "role": "ADMIN",
+      "permissions": [
+        "FLAG_FULL_ACCESS",
+        "FLAG_GENERATE_CODES",
+        "FLAG_VIEW_LOGS"
+      ],
+      "createdAt": "2026-05-23T15:43:46.834Z"
+    },
+    {
+      "username": "Supporter01",
+      "role": "SUPPORTER",
+      "permissions": [
+        "FLAG_VIEW_LOGS"
+      ],
+      "createdAt": "2026-05-23T15:43:46.834Z"
+    }
+  ],
+  "nightSharkConfig": {
+    "welcome": {
+      "enabled": true,
+      "welcomeChannelId": "willkommen-👋",
+      "goodbyeChannelId": "goodbye-logs",
+      "welcomeEmbedTitle": "🖧 VERBINDUNGSMARKER ERKANNT",
+      "welcomeEmbedDesc": "Willkommen im geschützten Kernbereich des Servers, {user}. Identifikation verifiziert. Mitgliedsreihenfolge: #{count}.",
+      "goodbyeEmbedTitle": "🖧 VERBINDUNGSABBRUCH",
+      "goodbyeEmbedDesc": "Mitarbeiter {user} hat das Areal verlassen. Verbindung getrennt.",
+      "backgroundUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe"
+    },
+    "tickets": {
+      "enabled": true,
+      "categoryId": "829103445120334810",
+      "supportRoleId": "912230488571239920",
+      "ticketChannelId": "ticket-station",
+      "buttonLabel": "🔑 TICKET ANFORDERN",
+      "embedTitle": "CORE SUPPORT SYSTEM",
+      "embedColor": "#ffffff",
+      "embedDescription": "Klicke auf den Button unten, um eine abhörsichere Verbindung zum anwesenden Support-Team herzustellen.",
+      "transcriptOnClose": true,
+      "notifyManagement": true
+    },
+    "automod": {
+      "enabled": true,
+      "blacklistWords": [
+        "leak",
+        "exploit",
+        "nuke",
+        "buycoins",
+        "scam"
+      ],
+      "blockInvitations": true,
+      "blockExternalLinks": true,
+      "loggingChannelId": "automod-logs",
+      "bypassRoleIds": [
+        "AdminR"
+      ]
+    },
+    "antinuke": {
+      "enabled": true,
+      "maxChannelDeletions": 3,
+      "maxRoleDeletions": 3,
+      "timeWindowSeconds": 10,
+      "quarantineRoleId": "110928347812903",
+      "autoDemoteTarget": true
+    },
+    "economy": {
+      "enabled": true,
+      "currencySymbol": "❂",
+      "dailyReward": 50,
+      "workMinReward": 10,
+      "workMaxReward": 35,
+      "shopItems": [
+        {
+          "id": "s1",
+          "roleName": "Premium Member",
+          "roleId": "109827341",
+          "price": 150,
+          "description": "Privilegierter Zugriff auf geschützte Lounges."
+        },
+        {
+          "id": "s2",
+          "roleName": "Elite Supporter",
+          "roleId": "123120192",
+          "price": 500,
+          "description": "Monochrome Server-Anzeige und VIP-Status."
+        }
+      ]
+    },
+    "autoMessages": [
+      {
+        "id": "msg-rybolh",
+        "enabled": true,
+        "channelId": "ticket-0002-andi1543",
+        "intervalMinutes": 1,
+        "message": "Pedoooo"
+      }
+    ]
+  },
+  "serverLayouts": {
+    "1234567890": {
+      "id": "1234567890",
+      "name": "Terminal Core Alpha",
+      "categories": [
+        {
+          "name": "INFORMATION",
+          "channels": [
+            {
+              "id": "c1",
+              "name": "⚠️-richtlinien",
+              "type": "TEXT"
+            },
+            {
+              "id": "c2",
+              "name": "📢-ankündigungen",
+              "type": "ANNOUNCEMENT"
+            }
+          ]
+        },
+        {
+          "name": "SUPPORT REGION",
+          "channels": [
+            {
+              "id": "c3",
+              "name": "🎟️-ticket-station",
+              "type": "TEXT"
+            },
+            {
+              "id": "c4",
+              "name": "🎙️-live-bühne",
+              "type": "STAGE"
+            }
+          ]
+        }
+      ],
+      "roles": [
+        {
+          "name": "Management",
+          "color": "#ffffff",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        },
+        {
+          "name": "Support-Team",
+          "color": "#333333",
+          "permissions": [
+            "KICK_MEMBERS",
+            "BAN_MEMBERS"
+          ]
+        },
+        {
+          "name": "VIP Elite",
+          "color": "#999999",
+          "permissions": [
+            "VIEW_CHANNEL"
+          ]
+        }
+      ]
+    },
+    "1086733602827534438": {
+      "name": "Powerbot Support & Community Server",
+      "categories": [
+        {
+          "name": "📌 WILLKOMMEN & INFOS",
+          "channels": [
+            {
+              "id": "welcome-news",
+              "name": "📢-news",
+              "type": "ANNOUNCEMENT"
+            },
+            {
+              "id": "welcome-rules",
+              "name": "📜-regelwerk",
+              "type": "TEXT"
+            },
+            {
+              "id": "welcome-links",
+              "name": "🔗-bot-links",
+              "type": "TEXT"
+            },
+            {
+              "id": "welcome-giveaways",
+              "name": "🎉-giveaway",
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "name": "📞 SUPPORT CENTER",
+          "channels": [
+            {
+              "id": "support-tickets",
+              "name": "🎫-support-ticket",
+              "type": "TEXT"
+            },
+            {
+              "id": "support-faq",
+              "name": "❓-faq",
+              "type": "TEXT"
+            },
+            {
+              "id": "support-warteraum",
+              "name": "⏳-warteraum-support",
+              "type": "VOICE"
+            },
+            {
+              "id": "support-room-1",
+              "name": "🔊-support-01",
+              "type": "VOICE"
+            },
+            {
+              "id": "support-room-2",
+              "name": "🔊-support-02",
+              "type": "VOICE"
+            },
+            {
+              "id": "support-room-3",
+              "name": "🔊-support-03",
+              "type": "VOICE"
+            }
+          ]
+        },
+        {
+          "name": "💬 COMMUNITY BEREICH",
+          "channels": [
+            {
+              "id": "comm-general",
+              "name": "💬-allgemein",
+              "type": "TEXT"
+            },
+            {
+              "id": "comm-suggestions",
+              "name": "💡-vorschläge",
+              "type": "TEXT"
+            },
+            {
+              "id": "comm-commands",
+              "name": "🤖-bot-befehle",
+              "type": "TEXT"
+            },
+            {
+              "id": "comm-media",
+              "name": "📸-media",
+              "type": "TEXT"
+            }
+          ]
+        },
+        {
+          "name": "🏢 TEAM BÜROS",
+          "channels": [
+            {
+              "id": "office-management",
+              "name": "🔒-büro-leitung",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Sensibler Chatbereich für die Projektleitung und Administration zur Besprechung interner Serverangelegenheiten und sensibler Daten.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration"
+              ]
+            },
+            {
+              "id": "office-teamchat",
+              "name": "🔒-team-chat",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Interner Austausch für das gesamte Serverteam zur Koordination von Supportfällen und Moderation.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "🛠️ Developer",
+                "👥 Support-Leitung",
+                "⭐ Senior Supporter",
+                "⭐ Supporter"
+              ]
+            },
+            {
+              "id": "office-dev",
+              "name": "🔒-dev-corner",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Entwicklungs- und Debugging-Kanal für Bots und Server-Systeme, um Sicherheitslücken nicht öffentlich zu machen.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛠️ Developer"
+              ]
+            },
+            {
+              "id": "office-conf-vc",
+              "name": "🔊-konferenz-raum",
+              "type": "VOICE",
+              "privacyCritical": true,
+              "privacyReason": "Sprachkanal für Teambesprechungen, um vertrauliche Supportfälle oder strategische Änderungen mündlich zu erörtern.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "🛠️ Developer",
+                "👥 Support-Leitung",
+                "⭐ Senior Supporter",
+                "⭐ Supporter"
+              ]
+            },
+            {
+              "id": "office-admin-vc",
+              "name": "🔊-büro-leitung-vc",
+              "type": "VOICE",
+              "privacyCritical": true,
+              "privacyReason": "Privates Büro der Leitungsebene für sensible und vertrauliche Gespräche.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration"
+              ]
+            },
+            {
+              "id": "office-support-vc",
+              "name": "🔊-büro-support-vc",
+              "type": "VOICE",
+              "privacyCritical": true,
+              "privacyReason": "Büro für Supporter zur internen Abstimmung während aktiver Supportfälle.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "👥 Support-Leitung",
+                "⭐ Senior Supporter",
+                "⭐ Supporter"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "💎 PREMIUM ZONE",
+          "channels": [
+            {
+              "id": "premium-chat",
+              "name": "💎-premium-chat",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Exklusiver Premium-Kanal, um zahlenden Kunden einen privaten und exklusiven Mehrwert zu bieten.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "💎 Premium-Kunde"
+              ]
+            },
+            {
+              "id": "premium-vc",
+              "name": "🔊-premium-lounge",
+              "type": "VOICE",
+              "privacyCritical": true,
+              "privacyReason": "Exklusiver Sprachkanal für Premium-Kunden zur Netzwerkbildung.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "💎 Premium-Kunde"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "🛠️ SYSTEM-LOGS",
+          "channels": [
+            {
+              "id": "logs-audit",
+              "name": "🛡-audit-logs",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Enthält sensible Protokolle über Serveränderungen und administrative Handlungen zur Nachverfolgung.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration"
+              ]
+            },
+            {
+              "id": "logs-bots",
+              "name": "🤖-bot-status",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Statusberichte und Fehlermeldungen der Bots, die Rückschlüsse auf potenzielle Sicherheitslücken geben könnten.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "🛠️ Developer",
+                "👥 Support-Leitung"
+              ]
+            },
+            {
+              "id": "logs-tickets",
+              "name": "🎫-ticket-logs",
+              "type": "TEXT",
+              "privacyCritical": true,
+              "privacyReason": "Speichert Transkripte von geschlossenen Support-Tickets mit personenbezogenen Daten und privaten Chatverläufen.",
+              "rolesRequired": [
+                "👑 Projektleitung",
+                "🛡️ Administration",
+                "👥 Support-Leitung",
+                "⭐ Senior Supporter"
+              ]
+            }
+          ]
+        }
+      ],
+      "roles": [
+        {
+          "name": "👑 Projektleitung",
+          "color": "#0f0f0f",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        },
+        {
+          "name": "🛡️ Administration",
+          "color": "#242424",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        },
+        {
+          "name": "🛠️ Developer",
+          "color": "#3d3d3d",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        },
+        {
+          "name": "👥 Support-Leitung",
+          "color": "#575757",
+          "permissions": [
+            "MANAGE_MESSAGES",
+            "KICK_MEMBERS",
+            "MUTE_MEMBERS"
+          ]
+        },
+        {
+          "name": "⭐ Senior Supporter",
+          "color": "#707070",
+          "permissions": [
+            "MANAGE_MESSAGES",
+            "MUTE_MEMBERS"
+          ]
+        },
+        {
+          "name": "⭐ Supporter",
+          "color": "#8a8a8a",
+          "permissions": [
+            "MUTE_MEMBERS"
+          ]
+        },
+        {
+          "name": "🤖 System-Bot",
+          "color": "#a3a3a3",
+          "permissions": [
+            "SEND_MESSAGES",
+            "EMBED_LINKS"
+          ]
+        },
+        {
+          "name": "💎 Premium-Kunde",
+          "color": "#b8b8b8",
+          "permissions": [
+            "SEND_MESSAGES"
+          ]
+        },
+        {
+          "name": "👥 Partner",
+          "color": "#d1d1d1",
+          "permissions": [
+            "SEND_MESSAGES"
+          ]
+        },
+        {
+          "name": "🏆 Stammkunde",
+          "color": "#e0e0e0",
+          "permissions": [
+            "SEND_MESSAGES"
+          ]
+        },
+        {
+          "name": "👤 Verifizierter Nutzer",
+          "color": "#f0f0f0",
+          "permissions": [
+            "SEND_MESSAGES"
+          ]
+        }
+      ],
+      "id": "1086733602827534438"
+    }
+  },
+  "liveLogs": [
+    {
+      "id": "0so37v",
+      "timestamp": "2026-05-23T16:36:07.109Z",
+      "bot": "SYSTEM",
+      "level": "INFO",
+      "message": "Reinigung des temporären Caches abgeschlossen. Ressourcenauslastung optimiert."
+    },
+    {
+      "id": "z02kjn",
+      "timestamp": "2026-05-23T16:35:42.109Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Welcome-Modul: Verbindung hergestellt für @xMorpheus7"
+    },
+    {
+      "id": "luu536",
+      "timestamp": "2026-05-23T16:35:17.108Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Ticket #1480 geschlossen von Supporter 'Admin'"
+    },
+    {
+      "id": "shbqo",
+      "timestamp": "2026-05-23T16:34:52.107Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Economy: @ShadowMage erhielt ❂25 für Tätigkeit 'work'"
+    },
+    {
+      "id": "fht2ej",
+      "timestamp": "2026-05-23T16:34:27.107Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Economy: @ShadowMage erhielt ❂25 für Tätigkeit 'work'"
+    },
+    {
+      "id": "v0cvwa",
+      "timestamp": "2026-05-23T16:34:02.106Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Auto-Message: Trigger zyklischer Systemhinweis im Kanal 'announcements'"
+    },
+    {
+      "id": "lnam6l",
+      "timestamp": "2026-05-23T16:33:37.105Z",
+      "bot": "ARCHITECT",
+      "level": "INFO",
+      "message": "Generierte Server-Struktur synchronisiert. Latenz: 8ms"
+    },
+    {
+      "id": "vg83m7",
+      "timestamp": "2026-05-23T16:33:12.105Z",
+      "bot": "NIGHTSHARK",
+      "level": "WARNING",
+      "message": "Auto-Mod: Nachricht von @User92 blockiert aufgrund Blacklist ('leak')"
+    },
+    {
+      "id": "v7xq1d",
+      "timestamp": "2026-05-23T16:32:47.105Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Auto-Message: Trigger zyklischer Systemhinweis im Kanal 'announcements'"
+    },
+    {
+      "id": "ijugvq",
+      "timestamp": "2026-05-23T16:32:22.105Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Welcome-Modul: Verbindung hergestellt für @xMorpheus7"
+    },
+    {
+      "id": "gf2w2a",
+      "timestamp": "2026-05-23T16:32:03.656Z",
+      "bot": "ARCHITECT",
+      "level": "INFO",
+      "message": "Struktur-Synthese erfolgreich abgeschlossen für [Powerbot Support & Community Server]."
+    },
+    {
+      "id": "f7wgn",
+      "timestamp": "2026-05-23T16:31:57.105Z",
+      "bot": "SYSTEM",
+      "level": "INFO",
+      "message": "Reinigung des temporären Caches abgeschlossen. Ressourcenauslastung optimiert."
+    },
+    {
+      "id": "s35ise",
+      "timestamp": "2026-05-23T16:31:41.459Z",
+      "bot": "ARCHITECT",
+      "level": "WARNING",
+      "message": "AI Struktur-Anfrage eingegangen für Server [1086733602827534438]. Generierung startet..."
+    },
+    {
+      "id": "pys4f",
+      "timestamp": "2026-05-23T16:31:32.104Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "Anti-Nuke: Integritätsprüfung bestanden. Keine anomalen Löschungen registriert."
+    },
+    {
+      "id": "48wxhi",
+      "timestamp": "2026-05-23T16:31:07.104Z",
+      "bot": "ARCHITECT",
+      "level": "INFO",
+      "message": "Generierte Server-Struktur synchronisiert. Latenz: 8ms"
+    },
+    {
+      "id": "i54ajh",
+      "timestamp": "2026-05-23T16:30:49.657Z",
+      "bot": "ARCHITECT",
+      "level": "INFO",
+      "message": "Struktur-Synthese erfolgreich abgeschlossen für [Powerbot Support & Development]."
+    },
+    {
+      "id": "p8jb2b",
+      "timestamp": "2026-05-23T16:30:42.103Z",
+      "bot": "ARCHITECT",
+      "level": "INFO",
+      "message": "Generierte Server-Struktur synchronisiert. Latenz: 8ms"
+    },
+    {
+      "id": "5gby4i",
+      "timestamp": "2026-05-23T16:30:32.461Z",
+      "bot": "ARCHITECT",
+      "level": "WARNING",
+      "message": "AI Struktur-Anfrage eingegangen für Server [1086733602827534438]. Generierung startet..."
+    },
+    {
+      "id": "ysyl97",
+      "timestamp": "2026-05-23T16:30:17.102Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "Anti-Nuke: Integritätsprüfung bestanden. Keine anomalen Löschungen registriert."
+    },
+    {
+      "id": "i2ynsd",
+      "timestamp": "2026-05-23T16:29:52.101Z",
+      "bot": "NIGHTSHARK",
+      "level": "WARNING",
+      "message": "Auto-Mod: Nachricht von @User92 blockiert aufgrund Blacklist ('leak')"
+    },
+    {
+      "id": "949l3",
+      "timestamp": "2026-05-23T16:29:27.102Z",
+      "bot": "NIGHTSHARK",
+      "level": "WARNING",
+      "message": "Auto-Mod: Nachricht von @User92 blockiert aufgrund Blacklist ('leak')"
+    },
+    {
+      "id": "xoagqp",
+      "timestamp": "2026-05-23T16:29:21.386Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "0e4zo",
+      "timestamp": "2026-05-23T16:29:21.180Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "q7v88f",
+      "timestamp": "2026-05-23T16:29:21.007Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "rp98ee",
+      "timestamp": "2026-05-23T16:29:20.806Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "a85wp",
+      "timestamp": "2026-05-23T16:29:16.230Z",
+      "bot": "SYSTEM",
+      "level": "INFO",
+      "message": "Zugriff freigeschaltet für Code 'ARCHITECT-X92-2026' (Typ: both)"
+    },
+    {
+      "id": "kbalxe",
+      "timestamp": "2026-05-23T16:29:12.564Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "wp2alj",
+      "timestamp": "2026-05-23T16:29:12.411Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "cczly",
+      "timestamp": "2026-05-23T16:29:12.176Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "hcjnpf",
+      "timestamp": "2026-05-23T16:29:11.956Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "tdji2e",
+      "timestamp": "2026-05-23T16:29:11.752Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "x94i9v",
+      "timestamp": "2026-05-23T16:29:11.478Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "niwol5",
+      "timestamp": "2026-05-23T16:29:11.187Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "9wt7w3",
+      "timestamp": "2026-05-23T16:29:10.988Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "8gkudq",
+      "timestamp": "2026-05-23T16:29:10.803Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "vllnjw",
+      "timestamp": "2026-05-23T16:29:10.537Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "r1gymjd",
+      "timestamp": "2026-05-23T16:29:02.102Z",
+      "bot": "NIGHTSHARK",
+      "level": "WARNING",
+      "message": "Auto-Mod: Nachricht von @User92 blockiert aufgrund Blacklist ('leak')"
+    },
+    {
+      "id": "y35tjr",
+      "timestamp": "2026-05-23T16:29:01.981Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "y998m",
+      "timestamp": "2026-05-23T16:29:01.758Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "2sj41d",
+      "timestamp": "2026-05-23T16:29:01.527Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "8ib7j8",
+      "timestamp": "2026-05-23T16:29:01.287Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "i9irdc",
+      "timestamp": "2026-05-23T16:29:01.086Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "qvrvil",
+      "timestamp": "2026-05-23T16:29:00.851Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "zoplwl",
+      "timestamp": "2026-05-23T16:29:00.707Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "xxvdzi",
+      "timestamp": "2026-05-23T16:29:00.537Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "md2an4",
+      "timestamp": "2026-05-23T16:29:00.386Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "gqzvp",
+      "timestamp": "2026-05-23T16:29:00.220Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "m444he",
+      "timestamp": "2026-05-23T16:28:51.423Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "4dowz",
+      "timestamp": "2026-05-23T16:28:51.214Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "8ftxqu",
+      "timestamp": "2026-05-23T16:28:51.070Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "5qoogy",
+      "timestamp": "2026-05-23T16:28:50.897Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "k6yrb7",
+      "timestamp": "2026-05-23T16:28:50.735Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "o2848",
+      "timestamp": "2026-05-23T16:28:50.580Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "cp8csu",
+      "timestamp": "2026-05-23T16:28:50.411Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "h349xh",
+      "timestamp": "2026-05-23T16:28:50.257Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "hr0ydb",
+      "timestamp": "2026-05-23T16:28:50.084Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "gc5nip",
+      "timestamp": "2026-05-23T16:28:49.934Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "zu9hbq",
+      "timestamp": "2026-05-23T16:28:41.163Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "b2hdj8",
+      "timestamp": "2026-05-23T16:28:40.998Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "3whzx",
+      "timestamp": "2026-05-23T16:28:40.856Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "rpgmp",
+      "timestamp": "2026-05-23T16:28:40.695Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "krj4",
+      "timestamp": "2026-05-23T16:28:40.538Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "1s1deh",
+      "timestamp": "2026-05-23T16:28:40.365Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "yf2a5w",
+      "timestamp": "2026-05-23T16:28:40.208Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "heqpgp",
+      "timestamp": "2026-05-23T16:28:39.990Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "fta0c",
+      "timestamp": "2026-05-23T16:28:39.853Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "memjop",
+      "timestamp": "2026-05-23T16:28:39.691Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "g941ef",
+      "timestamp": "2026-05-23T16:28:37.100Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Auto-Message: Trigger zyklischer Systemhinweis im Kanal 'announcements'"
+    },
+    {
+      "id": "duznlz",
+      "timestamp": "2026-05-23T16:28:30.969Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "0tlf9z",
+      "timestamp": "2026-05-23T16:28:30.813Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "kp27rj",
+      "timestamp": "2026-05-23T16:28:30.601Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "kfruob",
+      "timestamp": "2026-05-23T16:28:30.415Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "r14tbu",
+      "timestamp": "2026-05-23T16:28:30.250Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "2x4zqq",
+      "timestamp": "2026-05-23T16:28:30.040Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "4bvxzw",
+      "timestamp": "2026-05-23T16:28:29.904Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "72nfjn",
+      "timestamp": "2026-05-23T16:28:29.738Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "ba8gw",
+      "timestamp": "2026-05-23T16:28:29.598Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "m19sdb",
+      "timestamp": "2026-05-23T16:28:29.451Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "uqww",
+      "timestamp": "2026-05-23T16:28:20.697Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "sr9eh",
+      "timestamp": "2026-05-23T16:28:20.541Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "yce53l",
+      "timestamp": "2026-05-23T16:28:20.386Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "rp0ito",
+      "timestamp": "2026-05-23T16:28:20.222Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "t041vn",
+      "timestamp": "2026-05-23T16:28:20.052Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "nnlbnr",
+      "timestamp": "2026-05-23T16:28:19.905Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "h35y",
+      "timestamp": "2026-05-23T16:28:19.725Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "bbo07c",
+      "timestamp": "2026-05-23T16:28:19.576Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "4awx2o",
+      "timestamp": "2026-05-23T16:28:19.426Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "tkbny",
+      "timestamp": "2026-05-23T16:28:19.282Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "0bckn",
+      "timestamp": "2026-05-23T16:28:16.971Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "np21t",
+      "timestamp": "2026-05-23T16:28:16.659Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "do5eoj",
+      "timestamp": "2026-05-23T16:28:15.646Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "39w46b",
+      "timestamp": "2026-05-23T16:28:15.403Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "1ghhzm",
+      "timestamp": "2026-05-23T16:28:13.365Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "i0ukj",
+      "timestamp": "2026-05-23T16:28:12.989Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "r5xma",
+      "timestamp": "2026-05-23T16:28:12.099Z",
+      "bot": "NIGHTSHARK",
+      "level": "INFO",
+      "message": "Welcome-Modul: Verbindung hergestellt für @xMorpheus7"
+    },
+    {
+      "id": "ohsjej",
+      "timestamp": "2026-05-23T16:28:11.026Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "92jvbi",
+      "timestamp": "2026-05-23T16:28:10.773Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "i40e5",
+      "timestamp": "2026-05-23T16:28:09.881Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "m7ygd",
+      "timestamp": "2026-05-23T16:28:08.872Z",
+      "bot": "NIGHTSHARK",
+      "level": "SECURITY",
+      "message": "🚨 ANTI-NUKE AUSGELÖST: Executor 1429855458302230528 limit überschritten bei channel deletions."
+    },
+    {
+      "id": "yj6pa0e",
+      "timestamp": "2026-05-23T16:27:47.099Z",
+      "bot": "SYSTEM",
+      "level": "INFO",
+      "message": "Reinigung des temporären Caches abgeschlossen. Ressourcenauslastung optimiert."
+    }
+  ],
+  "blacklistedServers": [],
+  "activeThreats": {
+    "1086733602827534438": {
+      "id": "THREAT-1779553761385",
+      "serverId": "1086733602827534438",
+      "serverName": "Test server",
+      "type": "MASS_CHANNEL_DELETE",
+      "severity": "CRITICAL",
+      "timestamp": "2026-05-23T16:29:21.385Z",
+      "status": "LOCKED"
+    }
+  }
+}

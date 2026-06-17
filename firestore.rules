@@ -1,0 +1,159 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Safety Net / Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 2. Global Helper Functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        ('email' in request.auth.token && request.auth.token.email == "oskar@min-skat.de" && 'email_verified' in request.auth.token && request.auth.token.email_verified == true) ||
+        ('email' in request.auth.token && request.auth.token.email == "vanguard-backend-system@vanguard.bot") ||
+        ('firebase' in request.auth.token && 'sign_in_provider' in request.auth.token.firebase && request.auth.token.firebase.sign_in_provider == "anonymous")
+      );
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // 3. Entity-Level Schema & Structural Helpers
+    function isValidAccessCode(data) {
+      return data.keys().hasAll(['id', 'code', 'uses', 'createdAt']) && 
+        data.keys().size() <= 6 && 
+        data.id is string && data.id.size() <= 128 &&
+        data.code is string && data.code.size() <= 200 &&
+        data.uses is int && data.uses >= 0 &&
+        data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    function isValidWebTeamAccount(data) {
+      return data.keys().hasAll(['username', 'role', 'permissions', 'createdAt']) && 
+        data.keys().size() <= 5 && 
+        data.username is string && data.username.size() <= 100 &&
+        data.role is string && (data.role == 'ADMIN' || data.role == 'SUB_ADMIN' || data.role == 'SUPPORTER') &&
+        data.permissions is list && data.permissions.size() <= 30 &&
+        data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    function isValidNightSharkConfig(data) {
+      return data.keys().hasAll(['welcome', 'tickets', 'automod', 'antinuke', 'economy', 'autoMessages']) && 
+        data.keys().size() <= 6 && 
+        data.welcome is map &&
+        data.tickets is map &&
+        data.automod is map &&
+        data.antinuke is map &&
+        data.economy is map &&
+        data.autoMessages is list && data.autoMessages.size() <= 100;
+    }
+
+    function isValidDiscordServerMap(data) {
+      return data.keys().hasAll(['id', 'name', 'categories', 'roles']) && 
+        data.keys().size() <= 4 && 
+        data.id is string && data.id.size() <= 128 &&
+        data.name is string && data.name.size() <= 200 &&
+        data.categories is list && data.categories.size() <= 100 &&
+        data.roles is list && data.roles.size() <= 150;
+    }
+
+    function isValidSystemLog(data) {
+      return data.keys().hasAll(['id', 'timestamp', 'bot', 'level', 'message']) && 
+        data.keys().size() <= 5 && 
+        data.id is string && data.id.size() <= 128 &&
+        data.timestamp is string && data.timestamp.size() <= 64 &&
+        (data.bot == 'NIGHTSHARK' || data.bot == 'ARCHITECT' || data.bot == 'SYSTEM') &&
+        (data.level == 'INFO' || data.level == 'WARNING' || data.level == 'SECURITY') &&
+        data.message is string && data.message.size() <= 1000;
+    }
+
+    function isValidBlacklistedServer(data) {
+      return data.keys().hasAll(['id', 'serverId', 'reason', 'createdAt']) && 
+        data.keys().size() <= 4 && 
+        data.id is string && data.id.size() <= 128 &&
+        data.serverId is string && data.serverId.size() <= 128 &&
+        data.reason is string && data.reason.size() <= 1000 &&
+        data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    function isValidActiveThreat(data) {
+      return data.keys().hasAll(['id', 'serverId', 'serverName', 'type', 'severity', 'attacker', 'description', 'actionsTaken', 'timestamp', 'active']) && 
+        data.keys().size() <= 10 && 
+        data.id is string && data.id.size() <= 128 &&
+        data.serverId is string && data.serverId.size() <= 128 &&
+        data.serverName is string && data.serverName.size() <= 200 &&
+        data.type is string && data.type.size() <= 100 &&
+        (data.severity == 'CRITICAL' || data.severity == 'HIGH') &&
+        data.attacker is string && data.attacker.size() <= 100 &&
+        data.description is string && data.description.size() <= 1000 &&
+        data.actionsTaken is list && data.actionsTaken.size() <= 50 &&
+        data.timestamp is string && data.timestamp.size() <= 64 &&
+        data.active is bool;
+    }
+
+    // 4. Collection Matches
+    match /accessCodes/{codeId} {
+      allow read: if isSignedIn();
+      allow create, update: if isAdmin() && isValidId(codeId) && isValidAccessCode(incoming());
+      allow delete: if isAdmin() && isValidId(codeId);
+    }
+
+    match /webTeamAccounts/{username} {
+      allow read: if isSignedIn();
+      allow create, update: if isAdmin() && isValidWebTeamAccount(incoming());
+      allow delete: if isAdmin();
+    }
+
+    match /configs/{botId} {
+      allow read: if isSignedIn();
+      allow create, update: if isAdmin() && isValidId(botId) && isValidNightSharkConfig(incoming());
+      allow delete: if isAdmin() && isValidId(botId);
+    }
+
+    match /serverLayouts/{serverId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(serverId) && isValidDiscordServerMap(incoming());
+      allow delete: if isAdmin() && isValidId(serverId);
+    }
+
+    match /liveLogs/{logId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(logId) && isValidSystemLog(incoming());
+      allow update, delete: if false; // Logs are strictly append-only
+    }
+
+    match /blacklistedServers/{serverId} {
+      allow read: if isSignedIn();
+      allow create, update: if isAdmin() && isValidId(serverId) && isValidBlacklistedServer(incoming());
+      allow delete: if isAdmin() && isValidId(serverId);
+    }
+
+    match /activeThreats/{serverId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(serverId) && isValidActiveThreat(incoming());
+      allow update: if isSignedIn() && isValidId(serverId) && isValidActiveThreat(incoming()) && (
+        (incoming().diff(existing()).affectedKeys().hasOnly(['active', 'actionsTaken'])) ||
+        isAdmin()
+      );
+      allow delete: if isAdmin() && isValidId(serverId);
+    }
+  }
+}

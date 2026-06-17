@@ -1,0 +1,131 @@
+{
+  "entities": {
+    "AccessCode": {
+      "title": "AccessCode",
+      "description": "An administrative access code for validating dashboard sessions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "expiresAt": { "type": "string" },
+        "maxUses": { "type": "integer" },
+        "uses": { "type": "integer" },
+        "createdAt": { "type": "string" },
+        "targetBot": { "type": "string" }
+      },
+      "required": ["id", "code", "uses", "createdAt"]
+    },
+    "WebTeamAccount": {
+      "title": "WebTeamAccount",
+      "description": "A dashboard administrator or supporter account",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "role": { "type": "string" },
+        "permissions": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["username", "role", "permissions", "createdAt"]
+    },
+    "NightSharkConfig": {
+      "title": "NightSharkConfig",
+      "description": "Global settings for the NightShark guard and utility bot",
+      "type": "object",
+      "properties": {
+        "welcome": { "type": "object" },
+        "tickets": { "type": "object" },
+        "automod": { "type": "object" },
+        "antinuke": { "type": "object" },
+        "economy": { "type": "object" },
+        "autoMessages": { "type": "array" }
+      },
+      "required": ["welcome", "tickets", "automod", "antinuke", "economy", "autoMessages"]
+    },
+    "DiscordServerMap": {
+      "title": "DiscordServerMap",
+      "description": "A generated or manual Discord server channel and role structure blueprint",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "categories": { "type": "array" },
+        "roles": { "type": "array" }
+      },
+      "required": ["id", "name", "categories", "roles"]
+    },
+    "SystemLog": {
+      "title": "SystemLog",
+      "description": "A logged system, guard, or bot event for the dashboard live logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "bot": { "type": "string" },
+        "level": { "type": "string" },
+        "message": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "bot", "level", "message"]
+    },
+    "BlacklistedServer": {
+      "title": "BlacklistedServer",
+      "description": "A Discord server that is banned and automatically left by bots",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "serverId": { "type": "string" },
+        "reason": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "serverId", "reason", "createdAt"]
+    },
+    "ActiveThreat": {
+      "title": "ActiveThreat",
+      "description": "A current anti-nuke defense and mitigation event in progress on a server",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "serverId": { "type": "string" },
+        "serverName": { "type": "string" },
+        "type": { "type": "string" },
+        "severity": { "type": "string" },
+        "attacker": { "type": "string" },
+        "description": { "type": "string" },
+        "actionsTaken": { "type": "array" },
+        "timestamp": { "type": "string" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "serverId", "type", "severity", "attacker", "description", "actionsTaken", "timestamp", "active"]
+    }
+  },
+  "firestore": {
+    "/accessCodes/{codeId}": {
+      "schema": "AccessCode",
+      "description": "Codes for authenticating and establishing temporary browser sessions"
+    },
+    "/webTeamAccounts/{username}": {
+      "schema": "WebTeamAccount",
+      "description": "Dashboard user profiles with corresponding permission rules"
+    },
+    "/configs/{botId}": {
+      "schema": "NightSharkConfig",
+      "description": "Primary bot config documents"
+    },
+    "/serverLayouts/{serverId}": {
+      "schema": "DiscordServerMap",
+      "description": "Simulated or manual templates of Discord server hierarchies"
+    },
+    "/liveLogs/{logId}": {
+      "schema": "SystemLog",
+      "description": "Chronological system activity and telemetry"
+    },
+    "/blacklistedServers/{serverId}": {
+      "schema": "BlacklistedServer",
+      "description": "Servers where NightShark and Architect bots are permanently banned"
+    },
+    "/activeThreats/{serverId}": {
+      "schema": "ActiveThreat",
+      "description": "Server entities currently experiencing heavy anti-nuke automation logs"
+    }
+  }
+}

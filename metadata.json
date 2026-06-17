@@ -1,0 +1,8 @@
+{
+  "name": "Night Shark",
+  "description": "An elite, monochromatic control center and engine for Discord architecture and automated operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
